@@ -1,0 +1,5 @@
+package com.telusko.questionservice.service;
+
+public class QuestionService {
+
+}

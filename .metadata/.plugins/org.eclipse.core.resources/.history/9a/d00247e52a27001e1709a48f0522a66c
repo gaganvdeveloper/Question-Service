@@ -1,0 +1,35 @@
+package com.telusko.questionservice.controller;
+
+@RestController
+@RequestMapping("/question")
+public class QuestionController {
+
+	@Autowired
+	QuestionService service;
+
+	@PostMapping("/add")
+	public ResponseEntity<ResponseStructure<Question>> saveQuestion(@RequestBody Question question) {
+		return service.saveQuestion(question);
+	}
+
+	@PutMapping("/add")
+	public ResponseEntity<ResponseStructure<Question>> updateQuestion(@RequestBody Question question) {
+		return service.updateQuestion(question);
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<ResponseStructure<Optional<Question>>> findQuestionById(@PathVariable int id) {
+		return service.findQuestionById(id);
+	}
+
+	@GetMapping("/all")
+	public ResponseEntity<ResponseStructure<List<Question>>> getAllQuestion() {
+		return service.getAllQuestions();
+	}
+
+	@GetMapping("/all/{cat}")
+	public ResponseEntity<ResponseStructure<List<Question>>> findByCategory(@PathVariable("cat") String category) {
+		return service.findByCategory(category);
+	}
+
+}

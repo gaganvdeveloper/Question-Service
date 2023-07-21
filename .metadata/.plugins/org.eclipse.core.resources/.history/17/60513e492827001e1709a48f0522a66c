@@ -1,0 +1,8 @@
+package com.telusko.questionservice.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Question {
+
+}

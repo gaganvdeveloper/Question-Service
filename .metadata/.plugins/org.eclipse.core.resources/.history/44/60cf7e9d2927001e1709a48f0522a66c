@@ -1,0 +1,5 @@
+package com.telusko.questionservice.dao;
+
+public class QuestionDao {
+
+}
